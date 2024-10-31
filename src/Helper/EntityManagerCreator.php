@@ -10,7 +10,7 @@ class EntityManagerCreator {
 
         // Create a simple "default" Doctrine ORM configuration for Annotations
         $config = ORMSetup::createAttributeMetadataConfiguration(
-            [__DIR__ . "/src"],
+            [__DIR__ . "/.."],
             true
         );
         // or if you prefer yaml or XML
