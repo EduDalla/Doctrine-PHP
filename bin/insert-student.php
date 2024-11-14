@@ -8,9 +8,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $entityManager = EntityManagerCreator::createEntityManager();
 
-$student = new Student('Aluno novo');
-$student->addPhone( new Phone('(11) 91555 - 0411'));
-$student->addPhone(new Phone('(11) 33333 - 2122'));
+$student = new Student($argv[1]);
+
+for ($i = 2; $i < $argv; $i++) {
+    $student->addPhone(new Phone($argv[$i]));
+}
 
 $entityManager->persist($student);
 $entityManager->flush();
